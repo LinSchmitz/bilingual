@@ -1,0 +1,370 @@
+.navbar {
+  /* border: 1px solid var(--color-light-bg); */
+  border-radius: var(--radius-30);
+  color: #1b1d1f;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+}
+
+/* Seasonal background colors */
+.navbar--spring {
+  background: linear-gradient(to right, #bbefc3, #d0f0c0);
+}
+
+.navbar--summer {
+  background: linear-gradient(to right, #f6f1d3, #fae697);
+}
+
+.navbar--autumn {
+  background: linear-gradient(to right, #ffdab9, #ffd580);
+}
+
+.navbar--winter {
+  background: linear-gradient(to right, #bed6ed, #9daffc);
+}
+
+.navbar--rainy {
+  background: linear-gradient(to right, #8fa9d3, #5f7cb1);
+}
+
+/* General effect wrapper */
+
+.snowflakes,
+.blossoms,
+.leaves {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.cal {
+  display: flex;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.nav-left {
+  display: flex;
+  gap: 2rem;
+}
+
+/* ====================== ❄️ SNOW ====================== */
+.flake {
+  position: absolute;
+  top: -10px;
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: snow-fall linear infinite;
+}
+
+.flake:nth-child(odd) {
+  background: #fff;
+  opacity: 0.6;
+}
+.flake:nth-child(even) {
+  background: #e4bfed;
+  opacity: 0.7;
+}
+
+@keyframes snow-fall {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(100vh) translateX(20px);
+  }
+}
+
+/* Simulated randomness for snowflakes */
+.flake:nth-child(1) {
+  left: 2%;
+  animation-duration: 10s;
+  animation-delay: 0s;
+}
+.flake:nth-child(2) {
+  left: 5%;
+  animation-duration: 12s;
+  animation-delay: 1s;
+}
+.flake:nth-child(3) {
+  left: 7%;
+  animation-duration: 11s;
+  animation-delay: 2s;
+}
+/* ... (your existing flake rules up to 80) */
+.flake:nth-child(80) {
+  left: 80%;
+  animation-duration: 9s;
+  animation-delay: 2.2s;
+}
+
+/* ====================== 🌸 SPRING BLOSSOMS ====================== */
+.blossom {
+  position: absolute;
+  top: -20px;
+  font-size: 1.2rem;
+  animation: blossom-fall 12s ease-in infinite;
+  opacity: 0.9;
+}
+
+@keyframes blossom-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0.3;
+  }
+}
+
+/* Add randomness for blossoms */
+.blossom:nth-child(odd) {
+  font-size: 1.1rem;
+  color: #ffb6c1;
+}
+.blossom:nth-child(even) {
+  font-size: 1.4rem;
+  color: #ff69b4;
+}
+.blossom:nth-child(1) {
+  left: 5%;
+  animation-delay: 0s;
+}
+.blossom:nth-child(2) {
+  left: 12%;
+  animation-delay: 2s;
+}
+.blossom:nth-child(3) {
+  left: 25%;
+  animation-delay: 1s;
+}
+/* ... up to blossom:nth-child(40) */
+
+/* ====================== 🍂 AUTUMN LEAVES ====================== */
+.leaf {
+  position: absolute;
+  top: -20px;
+  font-size: 1.4rem;
+  animation: leaf-fall 14s ease-in-out infinite;
+  opacity: 0.9;
+}
+
+@keyframes leaf-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0.4;
+  }
+}
+
+.leaf:nth-child(odd) {
+  font-size: 1.2rem;
+  color: #d2691e;
+}
+.leaf:nth-child(even) {
+  font-size: 1.5rem;
+  color: #cd853f;
+}
+.leaf:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+}
+.leaf:nth-child(2) {
+  left: 20%;
+  animation-delay: 1.5s;
+}
+/* ====================== ☀️ SUMMER SUN RAYS ====================== */
+.sunRays {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.sunny {
+  position: absolute;
+  top: -30px;
+  font-size: 1.5rem;
+  animation: sun-float 15s ease-in-out infinite;
+  opacity: 0.8;
+}
+
+.sunny:nth-child(odd) {
+  color: #ffd700;
+  font-size: 1.6rem;
+}
+.sunny:nth-child(even) {
+  color: #fff176;
+  font-size: 1.4rem;
+}
+
+@keyframes sun-float {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(50vh) translateX(10px) scale(1.2);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(100vh) translateX(-10px) scale(1);
+    opacity: 0.3;
+  }
+}
+
+/* Example: add a few sun positions manually */
+.sunny:nth-child(1) {
+  left: 3%;
+  animation-delay: 0s;
+}
+.sunny:nth-child(2) {
+  left: 10%;
+  animation-delay: 1s;
+}
+.sunny:nth-child(3) {
+  left: 20%;
+  animation-delay: 2s;
+}
+.sunny:nth-child(4) {
+  left: 35%;
+  animation-delay: 0.5s;
+}
+.sunny:nth-child(5) {
+  left: 50%;
+  animation-delay: 2.5s;
+}
+.sunny:nth-child(6) {
+  left: 60%;
+  animation-delay: 1.5s;
+}
+.sunny:nth-child(7) {
+  left: 75%;
+  animation-delay: 2.2s;
+}
+.sunny:nth-child(8) {
+  left: 85%;
+  animation-delay: 0.8s;
+}
+
+.sunny {
+  /* ...existing styles */
+  text-shadow: 0 0 10px rgba(255, 223, 0, 0.8);
+}
+
+/* ====================== 🌧️ RAIN ====================== */
+.rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.raindrop {
+  position: absolute;
+  top: -10px;
+  font-size: 1.2rem;
+  opacity: 0.8;
+  animation: rain-fall 5s linear infinite;
+}
+
+@keyframes rain-fall {
+  0% {
+    transform: translateY(0) scaleY(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(100vh) scaleY(1.2);
+    opacity: 0;
+  }
+}
+
+/* Variations */
+.raindrop:nth-child(odd) {
+  font-size: 1.2rem;
+  color: #b3d4fc;
+}
+.raindrop:nth-child(even) {
+  font-size: 1rem;
+  color: #a1c6ea;
+}
+
+.raindrop:nth-child(1) {
+  left: 5%;
+  animation-delay: 0s;
+}
+.raindrop:nth-child(2) {
+  left: 10%;
+  animation-delay: 0.3s;
+}
+.raindrop:nth-child(3) {
+  left: 20%;
+  animation-delay: 0.6s;
+}
+.raindrop:nth-child(4) {
+  left: 25%;
+  animation-delay: 0.1s;
+}
+.raindrop:nth-child(5) {
+  left: 30%;
+  animation-delay: 0.4s;
+}
+.raindrop:nth-child(6) {
+  left: 40%;
+  animation-delay: 0.2s;
+}
+.raindrop:nth-child(7) {
+  left: 50%;
+  animation-delay: 0.5s;
+}
+.raindrop:nth-child(8) {
+  left: 60%;
+  animation-delay: 0.3s;
+}
+.raindrop:nth-child(9) {
+  left: 70%;
+  animation-delay: 0.6s;
+}
+.raindrop:nth-child(10) {
+  left: 80%;
+  animation-delay: 0.2s;
+}
+/* …continue up to 60 for variation */
+
+.raindrop {
+  width: 2px;
+  height: 15px;
+  background: #b3d4fc;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: rain-fall 5s linear infinite;
+}

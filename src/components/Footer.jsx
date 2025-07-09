@@ -1,11 +1,12 @@
 import React from 'react';
 
-export function Footer() {
+export function Footer({ t }) {
   return (
     <footer>
-      <p>منابع</p>
-      <p>تماس با ما</p>
-      <p>Roxara طراحی توسط تیم</p>
+      <p>{t.footerTeam}</p>
+      <p>{t.footerContact}</p>
+      <p>{t.footerResource}</p>
+      <p>{t.footerRes} </p>
     </footer>
   );
 }
